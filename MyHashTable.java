@@ -203,6 +203,7 @@ public class MyHashTable<AnyType> extends WordPuzzle {
             } else {
                 System.out.println("Invalid input");
                 scanner.nextLine();
+                printMenu();
             }
         }
         return input;
@@ -305,9 +306,10 @@ public class MyHashTable<AnyType> extends WordPuzzle {
                     t++;
                 }
             }
+            System.out.println();
         }
         long endTime = System.currentTimeMillis();
-        System.out.println("\nElapsed time: " + (endTime - startTime) + "\n");
+        System.out.println("\nElapsed time: " + (endTime - startTime) + "ms" + "\n");
     }
 
     // enhanced algorithm
@@ -480,26 +482,27 @@ public class MyHashTable<AnyType> extends WordPuzzle {
                     t++;
                 }
             }
+            System.out.println();
         }
 
         long endTime = System.currentTimeMillis();
-        System.out.println("\nElapsed time: " + (endTime - startTime) + "\n");
+        System.out.println("\nElapsed time: " + (endTime - startTime) + "ms" + "\n");
     }
 
     // create a new puzzle
     public static WordPuzzle newPuzzle() {
 
-        System.out.print("\nPlease enter puzzle rows (1-50): ");
+        System.out.print("\nPlease enter puzzle rows (1-200): ");
         int rows = getInt();
-        while (rows < 1 || rows > 50) {
-            System.out.print("Invalid number.  Please enter rows (1-50): ");
+        while (rows < 1 || rows > 200) {
+            System.out.print("Invalid number.  Please enter rows (1-200): ");
             rows = getInt();
         }
 
-        System.out.print("Please enter puzzle columns (1-50): ");
+        System.out.print("Please enter puzzle columns (1-200): ");
         int columns = getInt();
-        while (columns < 1 || columns > 50) {
-            System.out.print("Invalid number.  Please enter columns (1-50): ");
+        while (columns < 1 || columns > 200) {
+            System.out.print("Invalid number.  Please enter columns (1-200): ");
             columns = getInt();
         }
 
@@ -510,8 +513,8 @@ public class MyHashTable<AnyType> extends WordPuzzle {
         System.out.print(
                 "1 - run regular algorithm\n" +
                         "2 - run enhanced algorithm\n" +
-                        "3 - re-make new puzzle\n" +
-                        "4 - print puzzle\n" +
+                        "3 - make new puzzle\n" +
+                        "4 - re-print puzzle\n" +
                         "5 - exit\n" +
                         "Please enter 1-5:   ");
     }
